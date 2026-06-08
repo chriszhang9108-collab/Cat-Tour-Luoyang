@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>小游戏｜猫游洛阳</title>
+  <meta name="description" content="《猫游洛阳》小游戏方向：轻互动、情绪选择、城市散步。">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="games">
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="猫游洛阳首页"><span class="brand-mark">猫</span><span><strong>猫游洛阳</strong><small>Cat Tour Luoyang</small></span></a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav"><span></span><span></span><span></span></button>
+    <nav class="site-nav" id="site-nav" aria-label="主导航">
+      <a href="index.html" data-nav="home">首页</a>
+      <a href="characters.html" data-nav="characters">角色</a>
+      <a href="videos.html" data-nav="videos">视频</a>
+      <a href="guide.html" data-nav="guide">导览</a>
+      <a href="games.html" data-nav="games">小游戏</a>
+      <a href="stories.html" data-nav="stories">文章</a>
+      <a href="cooperation.html" data-nav="cooperation">合作</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-hero section-band compact-hero">
+      <p class="eyebrow">小游戏</p>
+      <h1>今天，橘小洛带你去哪儿？</h1>
+      <p>第一版先放一个轻量互动原型：选一种心情，让橘小洛给你一条洛阳散步建议。</p>
+    </section>
+
+    <section class="section-band game-layout">
+      <div class="game-panel">
+        <p class="card-kicker">猫爪寻路</p>
+        <h2>选择此刻的心情</h2>
+        <div class="choice-grid">
+          <button type="button" data-game-choice="too-fast">太着急</button>
+          <button type="button" data-game-choice="cannot-sleep">睡不着</button>
+          <button type="button" data-game-choice="want-leave">想逃走</button>
+          <button type="button" data-game-choice="missed">错过了</button>
+        </div>
+      </div>
+      <div class="game-result" id="game-result" aria-live="polite">
+        <span class="paw-track">ฅ</span>
+        <h2>橘小洛还在等你选择</h2>
+        <p>它不会催你。慢慢选，洛阳的路也不急。</p>
+      </div>
+    </section>
+
+    <section class="section-band">
+      <div class="section-heading">
+        <p class="eyebrow">后续方向</p>
+        <h2>小游戏可以继续扩展成三类体验</h2>
+      </div>
+      <div class="content-grid">
+        <article class="simple-card">
+          <h3>猫爪路线</h3>
+          <p>根据心情选择地标，生成一条轻导览路线。</p>
+        </article>
+        <article class="simple-card">
+          <h3>小灰对话</h3>
+          <p>把焦虑、不甘和逃避变成选择题，让橘小洛回应。</p>
+        </article>
+        <article class="simple-card">
+          <h3>洛阳纪念章</h3>
+          <p>完成路线后收集牡丹、石窟、灯笼和猫爪印章。</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <strong>猫游洛阳 Cat Tour Luoyang</strong>
+    <p>当前小游戏无需后端，适合 GitHub Pages 直接部署。</p>
+  </footer>
+  <script src="js/main.js"></script>
+</body>
+</html>

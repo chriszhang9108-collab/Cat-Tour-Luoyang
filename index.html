@@ -4,52 +4,143 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>猫游洛阳 Cat Tour Luoyang</title>
+  <meta name="description" content="《猫游洛阳》是以洛阳本地小橘猫橘小洛为主角的数字文旅 IP，一座城市情绪寓言。">
   <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
-  <header>
-    <h1>猫游洛阳</h1>
-    <p>一只小猫，带你慢慢走过千年神都。</p>
+<body data-page="home">
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="猫游洛阳首页">
+      <span class="brand-mark">猫</span>
+      <span>
+        <strong>猫游洛阳</strong>
+        <small>Cat Tour Luoyang</small>
+      </span>
+    </a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <nav class="site-nav" id="site-nav" aria-label="主导航">
+      <a href="index.html" data-nav="home">首页</a>
+      <a href="characters.html" data-nav="characters">角色</a>
+      <a href="videos.html" data-nav="videos">视频</a>
+      <a href="guide.html" data-nav="guide">导览</a>
+      <a href="games.html" data-nav="games">小游戏</a>
+      <a href="stories.html" data-nav="stories">文章</a>
+      <a href="cooperation.html" data-nav="cooperation">合作</a>
+    </nav>
   </header>
 
-  <nav>
-    <a href="index.html">首页</a>
-    <a href="characters.html">角色</a>
-    <a href="videos.html">视频</a>
-    <a href="guide.html">导览</a>
-    <a href="games.html">小游戏</a>
-    <a href="stories.html">文章</a>
-    <a href="cooperation.html">合作</a>
-  </nav>
-
   <main>
-    <section>
-      <h2>洛阳城市情绪寓言</h2>
-      <p>
-        《猫游洛阳》不是普通旅游号，也不是普通AI萌宠号。
-        它用一只洛阳小猫的视角，记录这座城市的地标、街巷、烟火气和普通人的心事。
+    <section class="hero section-band">
+      <div class="hero-copy">
+        <p class="eyebrow">洛阳城市情绪寓言</p>
+        <h1>猫游洛阳</h1>
+        <p class="hero-lead">在这座活了几千年的城市里，一只洛阳小橘猫陪人把日子过清楚。</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="guide.html">走进情绪导览</a>
+          <a class="button button-secondary" href="characters.html">认识三位角色</a>
+        </div>
+      </div>
+      <div class="hero-art ip-stage" aria-label="洛阳古城里的橘小洛主视觉">
+        <div class="sun-disc"></div>
+        <div class="palace">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="lantern lantern-left"></div>
+        <div class="lantern lantern-right"></div>
+        <img class="hero-character hero-xiaoluo" src="assets/characters/xiaoluo-front.webp" alt="橘小洛正面形象">
+        <img class="hero-character hero-xiaohui" src="assets/characters/xiaohui-front.webp" alt="小灰正面形象">
+        <span class="hero-ribbon">洛邑灯火 · 石板路 · 猫爪慢游</span>
+        <div class="stone-road"></div>
+      </div>
+    </section>
+
+    <section class="intro section-band">
+      <div class="section-heading">
+        <p class="eyebrow">不是旅游模板，也不是单纯萌宠</p>
+        <h2>用洛阳地标接住普通人的心事</h2>
+      </div>
+      <p class="intro-text">
+        《猫游洛阳》以橘小洛的慢、真与克制，穿过龙门石窟、洛河、应天门、牡丹园和古城街巷。每一集都从一个现实情绪出发，让小灰说出心魔，让橘小洛做出选择，再让洛阳的风景把情绪稳稳接住。
       </p>
     </section>
 
-    <section>
-      <h2>核心角色</h2>
-      <ul>
-        <li><strong>橘小洛：</strong>善良、慢、真、克制的小橘猫。</li>
-        <li><strong>小灰：</strong>橘小洛心里的焦虑、急躁和不甘。</li>
-        <li><strong>甄云漪：</strong>来自洛神赋意象的文化回声。</li>
-      </ul>
+    <section class="section-band">
+      <div class="section-heading">
+        <p class="eyebrow">IP 世界观</p>
+        <h2>三位角色，一座城的回声</h2>
+      </div>
+      <div class="feature-grid">
+        <article class="character-card xiaoluo">
+          <img class="character-sticker" src="assets/characters/xiaoluo-front.webp" alt="橘小洛">
+          <p class="card-kicker">主角</p>
+          <h3>橘小洛</h3>
+          <p>洛阳本地小橘猫，善良、慢、真、克制。它不急着给答案，只陪人把答案慢慢走出来。</p>
+        </article>
+        <article class="character-card xiaohui">
+          <img class="character-sticker" src="assets/characters/xiaohui-front.webp" alt="小灰">
+          <p class="card-kicker">心魔</p>
+          <h3>小灰</h3>
+          <p>焦虑、急躁、不甘，是橘小洛心里想走捷径的声音。它尖锐，但也真实。</p>
+        </article>
+        <article class="character-card yunzhi">
+          <img class="character-sticker yunzhi-sticker" src="assets/characters/yunyi-front.webp" alt="甄云漪">
+          <p class="card-kicker">文化回声</p>
+          <h3>甄云漪</h3>
+          <p>来自洛神赋意象，带着古典审美、洛水与牡丹的气息，让城市记忆轻轻浮现。</p>
+        </article>
+      </div>
     </section>
 
-    <section>
-      <h2>项目方向</h2>
-      <p>
-        AI动画、实拍猫爪、洛阳导览、城市治愈文章、小游戏、文创与本地店铺联动。
-      </p>
+    <section class="section-band warm-band">
+      <div class="section-heading">
+        <p class="eyebrow">内容公式</p>
+        <h2>一集《猫游洛阳》怎样发生</h2>
+      </div>
+      <div class="story-steps">
+        <div><span>01</span>一个洛阳地点</div>
+        <div><span>02</span>一个现实情绪</div>
+        <div><span>03</span>小灰说出心魔</div>
+        <div><span>04</span>橘小洛做出选择</div>
+        <div><span>05</span>洛阳用风景接住</div>
+      </div>
+    </section>
+
+    <section class="section-band">
+      <div class="section-heading">
+        <p class="eyebrow">第一版官网结构</p>
+        <h2>从 IP 展示到文旅合作入口</h2>
+      </div>
+      <div class="portal-grid">
+        <a class="portal-card" href="videos.html">
+          <span>视频沉淀</span>
+          <strong>往期动画、实拍猫爪和系列预告。</strong>
+        </a>
+        <a class="portal-card" href="guide.html">
+          <span>情绪导览</span>
+          <strong>地标与心事情绪的洛阳地图。</strong>
+        </a>
+        <a class="portal-card" href="games.html">
+          <span>小游戏</span>
+          <strong>轻互动，把城市散步变成选择题。</strong>
+        </a>
+        <a class="portal-card" href="cooperation.html">
+          <span>本地联动</span>
+          <strong>文旅、商户、文创与内容合作入口。</strong>
+        </a>
+      </div>
     </section>
   </main>
 
-  <footer>
-    <p>© 猫游洛阳 Cat Tour Luoyang</p>
+  <footer class="site-footer">
+    <strong>猫游洛阳 Cat Tour Luoyang</strong>
+    <p>洛阳城市情绪寓言，一只猫陪人把日子过清楚。</p>
   </footer>
+
+  <script src="js/main.js"></script>
 </body>
 </html>
