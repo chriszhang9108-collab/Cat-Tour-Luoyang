@@ -2052,30 +2052,67 @@ body[data-page="brand-home"]::before {
   padding-bottom: 28px;
 }
 
+.guide-section.last-guide-section {
+  height: 100svh;
+  min-height: 100svh;
+  box-sizing: border-box;
+  grid-template-rows: auto auto 1fr;
+  padding-top: 88px;
+  padding-bottom: 28px;
+  align-content: start;
+  gap: 14px;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.last-guide-section .section-copy {
+  max-width: 820px;
+}
+
+.last-guide-section .section-copy h2 {
+  font-size: clamp(34px, 4.6vw, 64px);
+}
+
+.last-guide-section .section-copy p {
+  max-width: 760px;
+  margin-top: 12px;
+  font-size: clamp(15px, 1.25vw, 18px);
+  line-height: 1.55;
+}
+
 .guide-board {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 14px;
+  gap: 16px;
 }
 
 .home-guide-card {
-  padding: 18px;
+  min-height: 160px;
+  padding: 14px 18px;
 }
 
 .home-guide-card h3 {
-  font-size: clamp(28px, 4vw, 54px);
+  font-size: clamp(1.9rem, 3.4vw, 3.4rem);
 }
 
 .home-guide-card strong {
   display: block;
-  margin: 8px 0;
+  margin: 6px 0;
   color: var(--orange);
+  font-size: 1rem;
+  line-height: 1.35;
+}
+
+.home-guide-card p {
+  font-size: 0.9rem;
+  line-height: 1.55;
 }
 
 .home-guide-card a {
   display: inline-flex;
-  margin-top: 14px;
+  margin-top: 10px;
   color: var(--cream);
+  font-size: 0.95rem;
   font-weight: 900;
   text-decoration: none;
 }
@@ -2087,6 +2124,28 @@ body[data-page="brand-home"]::before {
   gap: 18px;
   margin-top: 18px;
   padding: 18px;
+}
+
+.cooperation-card {
+  margin-top: auto;
+  align-self: end;
+  padding: 18px 24px;
+}
+
+.cooperation-card h3 {
+  margin: 4px 0 8px;
+  font-size: 1.45rem;
+}
+
+.cooperation-card p {
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.cooperation-card .brand-button {
+  min-height: 42px;
+  padding: 10px 20px;
+  font-size: 0.9rem;
 }
 
 .brand-footer small {

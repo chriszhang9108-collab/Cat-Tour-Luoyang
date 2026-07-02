@@ -186,7 +186,7 @@
     var list = document.getElementById("home-guide-list");
     if (!list) return;
     list.innerHTML = "";
-    (data.guides || []).forEach(function (item) {
+    (data.guides || []).slice(-3).forEach(function (item) {
       var card = makeEl("article", "home-guide-card");
       card.innerHTML = "<h3>" + item[0] + "</h3><strong>" + item[1] + "</strong><p>" + item[2] + '</p><a href="guide.html">查看导览</a>';
       list.appendChild(card);
@@ -267,6 +267,15 @@
 
     shell.addEventListener("wheel", function (event) {
       if (!isDesktopFullpage()) return;
+      if (sections[current] && sections[current].classList.contains("last-guide-section")) {
+        var section = sections[current];
+        var canScrollInside = section.scrollHeight > section.clientHeight;
+        var atTop = section.scrollTop <= 0;
+        var atBottom = section.scrollTop + section.clientHeight >= section.scrollHeight - 1;
+        if (canScrollInside && ((event.deltaY > 0 && !atBottom) || (event.deltaY < 0 && !atTop))) {
+          return;
+        }
+      }
       event.preventDefault();
       if (isLocked || Math.abs(event.deltaY) < 8) return;
       isLocked = true;
