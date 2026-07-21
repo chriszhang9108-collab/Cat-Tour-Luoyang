@@ -1,17 +1,18 @@
 window.CAT_LUOYANG_DATA = {
   slides: [
-    "assets/images/hero/slide-01.jpg",
-    "assets/images/hero/slide-02.jpg",
-    "assets/images/hero/slide-03.jpg",
-    "assets/images/hero/slide-04.jpg",
-    "assets/images/hero/slide-05.jpg",
-    "assets/images/hero/slide-06.jpg",
-    "assets/images/hero/slide-07.jpg",
-    "assets/images/hero/slide-08.jpg",
-    "assets/images/hero/slide-09.jpg",
-    "assets/images/hero/slide-10.jpg",
-    "assets/images/hero/slide-11.jpg",
-    "assets/images/hero/slide-12.jpg"
+    "pic/ChatGPT Image 2026年6月9日 20_40_08.png",
+    "pic/ChatGPT Image 2026年7月4日 16_58_18.png",
+    "pic/ChatGPT Image 2026年7月4日 17_00_38.png",
+    "pic/ChatGPT Image 2026年7月4日 17_13_27.png",
+    "pic/ChatGPT Image 2026年7月4日 17_15_55.png",
+    "pic/ChatGPT Image 2026年7月4日 17_18_25.png",
+    "pic/ChatGPT Image 2026年7月4日 17_22_41.png",
+    "pic/ChatGPT Image 2026年7月4日 17_28_31.png",
+    "pic/ChatGPT Image 2026年7月4日 17_29_41.png",
+    "pic/ChatGPT Image 2026年7月4日 17_32_43.png",
+    "pic/ChatGPT Image 2026年7月4日 17_36_27.png",
+    "pic/ChatGPT Image 2026年7月4日 18_49_24.png",
+    "pic/ChatGPT Image 2026年7月4日 18_59_17.png"
   ],
   videos: [
     {
