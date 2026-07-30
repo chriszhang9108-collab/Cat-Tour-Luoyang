@@ -16,46 +16,46 @@ window.CAT_LUOYANG_DATA = {
   ],
   videos: [
     {
-      title: "洛阳风里的一只小猫",
-      mood: "街巷与烟火",
-      platform: "视频号",
+      title: "聆听钟声的两只小猫",
+      mood: "倾听与感受",
+      platform: "白马寺",
       cover: "assets/images/video-covers/video-01.jpg",
-      video: "assets/videos/video-01.mp4"
+      video: "pic2/1.mp4"
     },
     {
-      title: "橘小洛慢游神都",
-      mood: "治愈与陪伴",
-      platform: "小红书",
+      title: "菜里开出牡丹花",
+      mood: "美食的治愈",
+      platform: "洛阳水席",
       cover: "assets/images/video-covers/video-02.jpg",
-      video: "assets/videos/video-02.mp4"
+      video: "video/6月25日 (1)(2).mp4"
     },
     {
-      title: "古城灯火与猫爪",
-      mood: "短暂快乐",
-      platform: "B站",
+      title: "游览汉服之城",
+      mood: "古典美与传承",
+      platform: "洛邑古城",
       cover: "assets/images/video-covers/video-03.jpg",
-      video: "assets/videos/video-03.mp4"
+      video: ""
     },
     {
-      title: "洛河边的失眠",
-      mood: "自我和解",
-      platform: "预告",
+      title: "佛像笑看人间百态",
+      mood: "包容与慈悲",
+      platform: "龙门石窟",
       cover: "assets/images/video-covers/video-04.jpg",
       video: ""
     },
     {
-      title: "牡丹开到第几天",
-      mood: "盛开与错过",
-      platform: "预告",
+      title: "坚实的古城墙",
+      mood: "守护一方之土",
+      platform: "丽景门",
       cover: "assets/images/video-covers/video-05.jpg",
-      video: ""
+      video: "video/生成猫游洛阳插画 (3).mp4"
     },
     {
-      title: "小灰别捣乱",
-      mood: "焦虑与不甘",
-      platform: "花絮",
+      title: "花开时节动京城",
+      mood: "雍容华贵的花中之王",
+      platform: "牡丹花海",
       cover: "assets/images/video-covers/video-06.jpg",
-      video: ""
+      video: "video/6月23日.mp4"
     }
   ],
   symbols: [
