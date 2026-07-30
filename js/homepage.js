@@ -18,7 +18,7 @@
       scrollCue: "向下滚动",
       videosEyebrow: "Cat Tour Stories",
       videosTitle: "往期影像",
-      videosSubtitle: "用一只小猫的视角，看见洛阳的风、光、街巷与人心。",
+      videosSubtitle: "用一只小猫的视角，看见洛阳的风光、街巷与故事。",
       visionEyebrow: "Our Vision",
       visionTitle: "我们的愿景",
       visionBody: "《猫游洛阳》不是普通旅游号，也不是普通AI萌宠号。它是一场关于洛阳、猫和普通人心事的城市情绪寓言。我们希望用一只小猫的视角，让更多人重新看见千年神都里的风景、烟火、时间和自己。",
@@ -44,7 +44,7 @@
       scrollCue: "Scroll",
       videosEyebrow: "Cat Tour Stories",
       videosTitle: "Stories In Motion",
-      videosSubtitle: "See Luoyang's light, streets and ordinary hearts through a cat's eyes.",
+      videosSubtitle: "See Luoyang's scenery, lanes, and stories through a cat's eyes.",
       visionEyebrow: "Our Vision",
       visionTitle: "A Gentle IP For The City",
       visionBody: "Cat Tour Luoyang is not a generic travel channel or a simple AI pet account. It is a city fable about Luoyang, cats and the emotions of everyday people.",
@@ -126,13 +126,21 @@
     list.innerHTML = "";
     (data.videos || []).forEach(function (item) {
       var card = makeEl("article", "home-video-card");
-      card.style.setProperty("--cover", "url('" + item.cover + "')");
+      var hasVideo = Boolean(item.video);
+      card.style.setProperty("--cover", "url('" + new URL(item.cover, document.baseURI).href + "')");
+      card.classList.toggle("is-pending", !hasVideo);
       card.innerHTML =
-        '<div class="home-video-cover"><button type="button" aria-label="播放视频">▶</button></div>' +
+        '<div class="home-video-cover">' +
+        (hasVideo
+          ? '<button type="button" aria-label="播放“' + item.title + '”">▶</button>'
+          : '<span class="home-video-pending">即将上线</span>') +
+        "</div>" +
         '<div class="home-video-info"><span>' + item.platform + '</span><h3>' + item.title + '</h3><p>' + item.mood + "</p></div>";
-      card.querySelector("button").addEventListener("click", function () {
-        openVideo(item.video);
-      });
+      if (hasVideo) {
+        card.querySelector("button").addEventListener("click", function () {
+          openVideo(item.video);
+        });
+      }
       list.appendChild(card);
     });
   }
