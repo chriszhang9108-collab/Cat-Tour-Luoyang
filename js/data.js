@@ -20,42 +20,42 @@ window.CAT_LUOYANG_DATA = {
       mood: "倾听与感受",
       platform: "白马寺",
       cover: "assets/images/video-covers/video-01.jpg",
-      video: "pic2/1.mp4"
+      video: "video/1.mp4"
     },
     {
       title: "菜里开出牡丹花",
       mood: "美食的治愈",
       platform: "洛阳水席",
       cover: "assets/images/video-covers/video-02.jpg",
-      video: "video/6月25日 (1)(2).mp4"
+      video: "video/2.mp4"
     },
     {
       title: "游览汉服之城",
       mood: "古典美与传承",
       platform: "洛邑古城",
       cover: "assets/images/video-covers/video-03.jpg",
-      video: ""
+      video: "video/3.mp4"
     },
     {
       title: "佛像笑看人间百态",
       mood: "包容与慈悲",
       platform: "龙门石窟",
       cover: "assets/images/video-covers/video-04.jpg",
-      video: ""
+      video: "video/4.mp4"
     },
     {
-      title: "坚实的古城墙",
-      mood: "守护一方之土",
-      platform: "丽景门",
+      title: "登仙山之顶",
+      mood: "览万千美景",
+      platform: "老君山",
       cover: "assets/images/video-covers/video-05.jpg",
-      video: "video/生成猫游洛阳插画 (3).mp4"
+      video: "video/5.mp4"
     },
     {
       title: "花开时节动京城",
       mood: "雍容华贵的花中之王",
       platform: "牡丹花海",
       cover: "assets/images/video-covers/video-06.jpg",
-      video: "video/6月23日.mp4"
+      video: "video/6.mp4"
     }
   ],
   symbols: [
