@@ -6,13 +6,6 @@
   var menu = document.querySelector(".brand-menu");
   var langToggle = document.querySelector(".language-toggle");
   var lang = "zh";
-  var destinationModal = document.getElementById("destination-modal");
-  var destinationModalImage = document.getElementById("destination-modal-image");
-  var destinationModalBlur = document.getElementById("destination-modal-blur");
-  var destinationImageFallback = document.getElementById("destination-image-fallback");
-  var activeDestination = null;
-  var activeDestinationTrigger = null;
-  var destinationModalTimer = null;
 
   var i18n = {
     zh: {
@@ -33,9 +26,9 @@
       gamesEyebrow: "Play With Ju Xiaoluo",
       gamesTitle: "和橘小洛一起玩",
       gamesSubtitle: "在洛阳慢慢走，也可以轻轻玩一会。",
-      guideEyebrow: "Seasonal Luoyang Guide",
-      guideTitle: "橘小洛的当季洛阳导览",
-      guideSubtitle: "这个夏天，先去有风、有水、有树荫的地方。",
+      guideEyebrow: "Luoyang Emotion Guide",
+      guideTitle: "橘小洛的洛阳导览",
+      guideSubtitle: "这里不只告诉你去哪儿，也告诉你为什么要在某一刻去那里。",
       cooperationEyebrow: "Cooperation",
       cooperationTitle: "猫游洛阳开放文旅内容共创",
       cooperationText: "文旅内容共创、景区/博物馆主题短片、店铺联动、文创开发、AI文旅内容制作、城市治愈内容共创。",
@@ -59,9 +52,9 @@
       gamesEyebrow: "Play With Ju Xiaoluo",
       gamesTitle: "Play With Ju Xiaoluo",
       gamesSubtitle: "Walk slowly in Luoyang, and play gently for a while.",
-      guideEyebrow: "Seasonal Luoyang Guide",
-      guideTitle: "Ju Xiaoluo's Seasonal Luoyang Guide",
-      guideSubtitle: "This summer, follow the breeze, water and shade.",
+      guideEyebrow: "Luoyang Emotion Guide",
+      guideTitle: "Ju Xiaoluo's Luoyang Guide",
+      guideSubtitle: "Not only where to go, but why a place may meet you at this moment.",
       cooperationEyebrow: "Cooperation",
       cooperationTitle: "Cat Tour Luoyang is open for cultural tourism collaborations",
       cooperationText: "Content co-creation, scenic short films, store collaborations, merch development, AI cultural tourism content and city-healing stories.",
@@ -81,8 +74,6 @@
     if (langToggle) {
       langToggle.classList.toggle("is-en", lang === "en");
     }
-    updateSeasonalLanguage();
-    syncDestinationModalLanguage();
   }
 
   function makeEl(tag, className, text) {
@@ -199,175 +190,14 @@
     });
   }
 
-  function destinationText(item, key) {
-    return item[(lang === "zh" ? "zh" : "en") + key] || "";
-  }
-
-  function destinationById(id) {
-    return (data.seasonalDestinations || []).find(function (item) {
-      return item.id === id;
-    });
-  }
-
-  function renderSeasonalDestinations() {
-    var list = document.getElementById("seasonal-destination-list");
+  function renderGuides() {
+    var list = document.getElementById("home-guide-list");
     if (!list) return;
     list.innerHTML = "";
-    (data.seasonalDestinations || []).forEach(function (item, index) {
-      var row = makeEl("div", "destination-strip-item");
-      row.setAttribute("role", "listitem");
-
-      var button = makeEl("button", "destination-strip");
-      button.type = "button";
-      button.setAttribute("data-destination-id", item.id);
-      button.style.setProperty("--strip-index", index);
-
-      var image = makeEl("img", "destination-strip-image");
-      image.src = item.stripImage;
-      image.loading = "lazy";
-      image.decoding = "async";
-
-      var shade = makeEl("span", "destination-strip-shade");
-      shade.setAttribute("aria-hidden", "true");
-
-      var copy = makeEl("span", "destination-strip-copy");
-      copy.appendChild(makeEl("strong", "destination-strip-name"));
-      copy.appendChild(makeEl("span", "destination-strip-english"));
-
-      var meta = makeEl("span", "destination-strip-meta");
-      meta.appendChild(makeEl("span", "destination-strip-season"));
-      meta.appendChild(makeEl("span", "destination-strip-action"));
-
-      button.appendChild(image);
-      button.appendChild(shade);
-      button.appendChild(copy);
-      button.appendChild(meta);
-      button.addEventListener("click", function () {
-        openDestination(item, button);
-      });
-      button.addEventListener("focus", function () {
-        list.classList.add("has-focus");
-        row.classList.add("is-focused");
-      });
-      button.addEventListener("blur", function () {
-        list.classList.remove("has-focus");
-        row.classList.remove("is-focused");
-      });
-
-      row.appendChild(button);
-      list.appendChild(row);
-    });
-    updateSeasonalLanguage();
-  }
-
-  function updateSeasonalLanguage() {
-    document.querySelectorAll(".destination-strip[data-destination-id]").forEach(function (button) {
-      var item = destinationById(button.getAttribute("data-destination-id"));
-      if (!item) return;
-      var name = destinationText(item, "Name");
-      button.querySelector(".destination-strip-name").textContent = name;
-      button.querySelector(".destination-strip-english").textContent = lang === "zh" ? item.enName : item.zhName;
-      button.querySelector(".destination-strip-season").textContent = destinationText(item, "SeasonTag");
-      button.querySelector(".destination-strip-action").textContent = lang === "zh" ? "查看大图与出游计划" : "View image & travel plan";
-      button.querySelector("img").alt = destinationText(item, "ImageAlt");
-      button.setAttribute("aria-label", name + (lang === "zh" ? "，打开大图与出游计划" : ", open image and travel plan"));
-    });
-  }
-
-  function syncDestinationModalLanguage() {
-    if (!activeDestination || !destinationModal) return;
-    document.getElementById("destination-modal-season").textContent = destinationText(activeDestination, "SeasonTag");
-    document.getElementById("destination-modal-title").textContent = destinationText(activeDestination, "Name");
-    document.getElementById("destination-modal-summary").textContent = destinationText(activeDestination, "Summary");
-    var planButton = document.getElementById("destination-plan-button");
-    planButton.textContent = destinationText(activeDestination, "CtaLabel");
-    destinationModalImage.alt = destinationText(activeDestination, "ImageAlt");
-    destinationImageFallback.textContent = lang === "zh" ? "图片暂时无法载入，请稍后重试。" : "The image could not be loaded. Please try again later.";
-    destinationModal.querySelector(".destination-modal-close").setAttribute("aria-label", lang === "zh" ? "关闭景点预览" : "Close destination preview");
-  }
-
-  function setPageBehindModal(isHidden) {
-    var header = document.querySelector(".brand-header");
-    [header, shell].forEach(function (node) {
-      if (!node) return;
-      node.inert = isHidden;
-      if (isHidden) {
-        node.setAttribute("aria-hidden", "true");
-      } else {
-        node.removeAttribute("aria-hidden");
-      }
-    });
-  }
-
-  function openDestination(item, trigger) {
-    if (!destinationModal || !destinationModalImage || !destinationModalBlur) return;
-    window.clearTimeout(destinationModalTimer);
-    activeDestination = item;
-    activeDestinationTrigger = trigger;
-    destinationImageFallback.hidden = true;
-    destinationModal.querySelector(".destination-modal-stage").classList.remove("is-image-missing");
-    destinationModalImage.src = item.fullImage;
-    destinationModalBlur.src = item.fullImage;
-    document.getElementById("destination-plan-button").href = item.planPdf;
-    syncDestinationModalLanguage();
-    destinationModal.hidden = false;
-    document.body.classList.add("modal-open");
-    setPageBehindModal(true);
-    window.requestAnimationFrame(function () {
-      destinationModal.classList.add("is-open");
-      window.setTimeout(function () {
-        destinationModal.querySelector(".destination-modal-close").focus({ preventScroll: true });
-      }, 30);
-    });
-  }
-
-  function closeDestination() {
-    if (!destinationModal || destinationModal.hidden) return;
-    destinationModal.classList.remove("is-open");
-    document.body.classList.remove("modal-open");
-    setPageBehindModal(false);
-    destinationModalTimer = window.setTimeout(function () {
-      destinationModal.hidden = true;
-      destinationModalImage.removeAttribute("src");
-      destinationModalBlur.removeAttribute("src");
-      activeDestination = null;
-      if (activeDestinationTrigger) activeDestinationTrigger.focus();
-      activeDestinationTrigger = null;
-    }, 240);
-  }
-
-  function setupDestinationModal() {
-    if (!destinationModal) return;
-    destinationModal.querySelectorAll("[data-destination-close]").forEach(function (control) {
-      control.addEventListener("click", closeDestination);
-    });
-    destinationModalImage.addEventListener("load", function () {
-      destinationImageFallback.hidden = true;
-      destinationModal.querySelector(".destination-modal-stage").classList.remove("is-image-missing");
-    });
-    destinationModalImage.addEventListener("error", function () {
-      destinationImageFallback.hidden = false;
-      destinationModal.querySelector(".destination-modal-stage").classList.add("is-image-missing");
-    });
-    window.addEventListener("keydown", function (event) {
-      if (destinationModal.hidden) return;
-      if (event.key === "Escape") {
-        event.preventDefault();
-        closeDestination();
-        return;
-      }
-      if (event.key !== "Tab") return;
-      var focusable = Array.prototype.slice.call(destinationModal.querySelectorAll('button:not([disabled]), a[href]:not([aria-disabled="true"])'));
-      if (!focusable.length) return;
-      var first = focusable[0];
-      var last = focusable[focusable.length - 1];
-      if (event.shiftKey && document.activeElement === first) {
-        event.preventDefault();
-        last.focus();
-      } else if (!event.shiftKey && document.activeElement === last) {
-        event.preventDefault();
-        first.focus();
-      }
+    (data.guides || []).slice(-3).forEach(function (item) {
+      var card = makeEl("article", "home-guide-card");
+      card.innerHTML = "<h3>" + item[0] + "</h3><strong>" + item[1] + "</strong><p>" + item[2] + '</p><a href="guide.html">查看导览</a>';
+      list.appendChild(card);
     });
   }
 
@@ -378,9 +208,6 @@
       entries.forEach(function (entry) {
         if (!entry.isIntersecting) return;
         var id = entry.target.getAttribute("data-section");
-        sections.forEach(function (section) {
-          section.classList.toggle("is-active", section === entry.target);
-        });
         document.body.setAttribute("data-active-section", id);
         document.querySelectorAll("[data-dot], [data-home-nav]").forEach(function (node) {
           var key = node.getAttribute("data-dot") || node.getAttribute("data-home-nav");
@@ -413,9 +240,6 @@
     function setCurrent(index) {
       current = Math.max(0, Math.min(sections.length - 1, index));
       var id = sections[current].getAttribute("data-section");
-      sections.forEach(function (section, sectionIndex) {
-        section.classList.toggle("is-active", sectionIndex === current);
-      });
       document.body.setAttribute("data-active-section", id);
       document.querySelectorAll("[data-dot], [data-home-nav]").forEach(function (node) {
         var key = node.getAttribute("data-dot") || node.getAttribute("data-home-nav");
@@ -450,10 +274,6 @@
     });
 
     shell.addEventListener("wheel", function (event) {
-      if (document.body.classList.contains("modal-open")) {
-        event.preventDefault();
-        return;
-      }
       if (!isDesktopFullpage()) return;
       if (sections[current] && sections[current].classList.contains("last-guide-section")) {
         var section = sections[current];
@@ -474,7 +294,6 @@
     }, { passive: false });
 
     window.addEventListener("keydown", function (event) {
-      if (document.body.classList.contains("modal-open")) return;
       if (!isDesktopFullpage()) return;
       if (event.key === "ArrowDown" || event.key === "PageDown") {
         event.preventDefault();
@@ -527,8 +346,7 @@
   renderVideos();
   renderSymbols();
   renderGames();
-  renderSeasonalDestinations();
-  setupDestinationModal();
+  renderGuides();
   setupSectionState();
   setupFullpageNavigation();
   setLanguage("zh");

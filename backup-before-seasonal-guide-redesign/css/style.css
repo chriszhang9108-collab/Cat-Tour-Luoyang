@@ -2063,12 +2063,13 @@ body[data-page="brand-home"]::before {
   height: 100svh;
   min-height: 100svh;
   box-sizing: border-box;
-  grid-template-rows: auto minmax(0, 1fr) auto;
-  padding-top: 78px;
-  padding-bottom: 16px;
+  grid-template-rows: auto auto 1fr;
+  padding-top: 88px;
+  padding-bottom: 28px;
   align-content: start;
-  gap: 12px;
-  overflow: hidden;
+  gap: 14px;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 .last-guide-section .section-copy {
@@ -2076,124 +2077,51 @@ body[data-page="brand-home"]::before {
 }
 
 .last-guide-section .section-copy h2 {
-  font-size: 2.75rem;
+  font-size: clamp(34px, 4.6vw, 64px);
 }
 
 .last-guide-section .section-copy p {
   max-width: 760px;
-  margin-top: 6px;
-  font-size: 0.95rem;
-  line-height: 1.5;
+  margin-top: 12px;
+  font-size: clamp(15px, 1.25vw, 18px);
+  line-height: 1.55;
 }
 
-.guide-seasonal-header .brand-eyebrow {
-  margin-bottom: 4px;
-}
-
-.seasonal-destination-list {
-  display: flex;
-  min-height: 0;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.destination-strip-item {
-  min-height: 0;
-  flex: 1 1 0;
-  transition: flex-grow 320ms cubic-bezier(0.2, 0.8, 0.2, 1);
-}
-
-.destination-strip {
-  position: relative;
+.guide-board {
   display: grid;
-  width: 100%;
-  height: 100%;
-  min-height: 0;
-  padding: 0;
-  overflow: hidden;
-  grid-template-columns: minmax(0, 1fr) auto;
-  align-items: end;
-  color: var(--cream);
-  text-align: left;
-  background: #213b32;
-  border: 1px solid rgba(255, 244, 220, 0.18);
-  border-radius: 8px;
-  box-shadow: 0 16px 34px rgba(0, 0, 0, 0.18);
-  opacity: 0;
-  transform: translate3d(108px, 0, 0);
-  transition:
-    opacity 560ms ease,
-    transform 700ms cubic-bezier(0.22, 1, 0.36, 1),
-    border-color 180ms ease,
-    box-shadow 180ms ease;
-  transition-delay: calc(var(--strip-index) * 86ms);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
 }
 
-.guide-seasonal-section.is-active .destination-strip {
-  opacity: 1;
-  transform: translate3d(0, 0, 0);
+.home-guide-card {
+  min-height: 160px;
+  padding: 14px 18px;
 }
 
-.destination-strip-image,
-.destination-strip-shade {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
+.home-guide-card h3 {
+  font-size: clamp(1.9rem, 3.4vw, 3.4rem);
 }
 
-.destination-strip-image {
-  object-fit: cover;
-  transition: transform 420ms cubic-bezier(0.2, 0.8, 0.2, 1), filter 220ms ease;
-}
-
-.destination-strip-shade {
-  z-index: 1;
-  background:
-    linear-gradient(90deg, rgba(13, 25, 23, 0.78) 0%, rgba(13, 25, 23, 0.2) 58%, rgba(13, 25, 23, 0.66) 100%),
-    linear-gradient(0deg, rgba(13, 25, 23, 0.72), transparent 70%);
-}
-
-.destination-strip-copy,
-.destination-strip-meta {
-  position: relative;
-  z-index: 2;
-  padding: 12px 16px;
-}
-
-.destination-strip-copy {
-  display: grid;
-  gap: 2px;
-}
-
-.destination-strip-name {
-  font-size: 1.55rem;
-  line-height: 1;
-}
-
-.destination-strip-english {
-  color: rgba(255, 244, 220, 0.72);
-  font-size: 0.68rem;
-  font-weight: 800;
-  text-transform: uppercase;
-}
-
-.destination-strip-meta {
-  display: grid;
-  justify-items: end;
-  gap: 3px;
-  font-size: 0.76rem;
-  font-weight: 800;
-}
-
-.destination-strip-action {
+.home-guide-card strong {
+  display: block;
+  margin: 6px 0;
   color: var(--orange);
-  font-size: 0.7rem;
+  font-size: 1rem;
+  line-height: 1.35;
 }
 
-.destination-strip:focus-visible {
-  outline: 3px solid var(--orange);
-  outline-offset: 2px;
+.home-guide-card p {
+  font-size: 0.9rem;
+  line-height: 1.55;
+}
+
+.home-guide-card a {
+  display: inline-flex;
+  margin-top: 10px;
+  color: var(--cream);
+  font-size: 0.95rem;
+  font-weight: 900;
+  text-decoration: none;
 }
 
 .brand-footer {
@@ -2209,37 +2137,6 @@ body[data-page="brand-home"]::before {
   margin-top: auto;
   align-self: end;
   padding: 18px 24px;
-}
-
-.guide-seasonal-section .brand-footer {
-  gap: 10px 16px;
-  margin-top: 0;
-  padding: 10px 16px;
-}
-
-.guide-seasonal-section .cooperation-card h3 {
-  margin: 2px 0 4px;
-  font-size: 1.2rem;
-}
-
-.guide-seasonal-section .cooperation-card p {
-  font-size: 0.78rem;
-  line-height: 1.45;
-}
-
-.guide-seasonal-section .cooperation-card .brand-eyebrow {
-  font-size: 0.66rem;
-}
-
-.guide-seasonal-section .cooperation-card .brand-button {
-  min-height: 38px;
-  padding: 8px 16px;
-  font-size: 0.82rem;
-}
-
-.guide-seasonal-section .brand-footer small {
-  font-size: 0.64rem;
-  line-height: 1;
 }
 
 .cooperation-card h3 {
@@ -2300,181 +2197,6 @@ body[data-page="brand-home"]::before {
   font-size: 28px;
 }
 
-body.modal-open {
-  overflow: hidden;
-}
-
-.destination-modal[hidden] {
-  display: none;
-}
-
-.destination-modal {
-  position: fixed;
-  inset: 0;
-  z-index: 160;
-  display: grid;
-  place-items: center;
-  padding: 4svh 4vw;
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 220ms ease, visibility 220ms ease;
-}
-
-.destination-modal.is-open {
-  opacity: 1;
-  visibility: visible;
-}
-
-.destination-modal-backdrop {
-  position: absolute;
-  inset: 0;
-  background: rgba(10, 19, 18, 0.9);
-  backdrop-filter: blur(8px);
-}
-
-.destination-modal-panel {
-  position: relative;
-  z-index: 1;
-  display: grid;
-  width: min(92vw, 1440px);
-  height: min(88svh, 900px);
-  overflow: hidden;
-  grid-template-columns: minmax(0, 1.6fr) minmax(280px, 0.58fr);
-  color: var(--cream);
-  background: #18332b;
-  border: 1px solid rgba(255, 244, 220, 0.2);
-  border-radius: 8px;
-  box-shadow: 0 32px 96px rgba(0, 0, 0, 0.52);
-  transform: translateY(18px) scale(0.985);
-  transition: transform 260ms cubic-bezier(0.22, 1, 0.36, 1);
-}
-
-.destination-modal.is-open .destination-modal-panel {
-  transform: translateY(0) scale(1);
-}
-
-.destination-modal-stage {
-  position: relative;
-  display: grid;
-  min-width: 0;
-  min-height: 0;
-  place-items: center;
-  overflow: hidden;
-  background: #0d1715;
-}
-
-.destination-modal-blur,
-.destination-modal-image {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-}
-
-.destination-modal-blur {
-  object-fit: cover;
-  filter: blur(26px) saturate(0.85);
-  opacity: 0.42;
-  transform: scale(1.12);
-}
-
-.destination-modal-image {
-  z-index: 1;
-  padding: 18px;
-  object-fit: contain;
-}
-
-.destination-image-fallback {
-  position: relative;
-  z-index: 2;
-  max-width: 320px;
-  margin: 0;
-  padding: 18px;
-  color: rgba(255, 244, 220, 0.76);
-  text-align: center;
-}
-
-.destination-modal-stage.is-image-missing .destination-modal-blur,
-.destination-modal-stage.is-image-missing .destination-modal-image {
-  display: none;
-}
-
-.destination-modal-copy {
-  display: flex;
-  min-width: 0;
-  padding: 38px 30px 30px;
-  flex-direction: column;
-  justify-content: flex-end;
-  background:
-    linear-gradient(180deg, rgba(255, 244, 220, 0.04), transparent 38%),
-    #18332b;
-}
-
-.destination-modal-copy h2 {
-  margin: 10px 0 16px;
-  color: var(--cream);
-  font-size: 2.35rem;
-  line-height: 1.08;
-}
-
-.destination-modal-copy > p:not(.brand-eyebrow) {
-  margin: 0 0 24px;
-  color: rgba(255, 244, 220, 0.76);
-  font-size: 0.96rem;
-  line-height: 1.7;
-}
-
-.destination-plan-button {
-  width: 100%;
-  justify-content: center;
-  text-align: center;
-}
-
-.destination-modal-close {
-  position: absolute;
-  top: 14px;
-  right: 14px;
-  z-index: 4;
-  width: 42px;
-  height: 42px;
-  color: var(--cream);
-  background: rgba(13, 23, 21, 0.72);
-  border: 1px solid rgba(255, 244, 220, 0.3);
-  border-radius: 50%;
-  font-size: 28px;
-  line-height: 1;
-}
-
-.destination-modal-close:focus-visible,
-.destination-plan-button:focus-visible {
-  outline: 3px solid var(--orange);
-  outline-offset: 3px;
-}
-
-@media (hover: hover) and (pointer: fine) {
-  .seasonal-destination-list:hover .destination-strip-item:not(:hover),
-  .seasonal-destination-list.has-focus .destination-strip-item:not(.is-focused) {
-    flex-grow: 0.76;
-  }
-
-  .seasonal-destination-list .destination-strip-item:hover,
-  .seasonal-destination-list .destination-strip-item.is-focused {
-    flex-grow: 1.72;
-  }
-
-  .destination-strip:hover,
-  .destination-strip:focus-visible {
-    border-color: rgba(246, 162, 58, 0.7);
-    box-shadow: 0 20px 46px rgba(0, 0, 0, 0.3);
-  }
-
-  .destination-strip:hover .destination-strip-image,
-  .destination-strip:focus-visible .destination-strip-image {
-    filter: saturate(1.08);
-    transform: scale(1.035);
-  }
-}
-
 @media (min-width: 960px) {
   .brand-nav {
     display: flex;
@@ -2515,43 +2237,6 @@ body.modal-open {
 
   .home-video-info {
     padding: 14px;
-  }
-
-  .guide-section.last-guide-section {
-    padding-top: 70px;
-    padding-bottom: 12px;
-    gap: 8px;
-  }
-
-  .last-guide-section .section-copy h2 {
-    font-size: 2rem;
-  }
-
-  .last-guide-section .section-copy p {
-    margin-top: 3px;
-    font-size: 0.82rem;
-  }
-
-  .destination-strip-copy,
-  .destination-strip-meta {
-    padding: 8px 14px;
-  }
-
-  .destination-strip-name {
-    font-size: 1.28rem;
-  }
-
-  .guide-seasonal-section .brand-footer {
-    padding: 8px 14px;
-  }
-
-  .guide-seasonal-section .cooperation-card h3 {
-    font-size: 1.05rem;
-  }
-
-  .guide-seasonal-section .cooperation-card p {
-    font-size: 0.72rem;
-    line-height: 1.35;
   }
 }
 
@@ -2611,66 +2296,8 @@ body.modal-open {
     overflow: visible;
   }
 
-  .guide-section.last-guide-section {
-    height: auto;
-    min-height: 100svh;
-    padding-top: 96px;
-    padding-bottom: 32px;
-    gap: 16px;
-    overflow: visible;
-  }
-
-  .last-guide-section .section-copy h2 {
-    font-size: 2.15rem;
-  }
-
-  .seasonal-destination-list {
-    gap: 10px;
-  }
-
-  .destination-strip-item {
-    height: 148px;
-    min-height: 148px;
-    flex: none;
-  }
-
-  .guide-seasonal-section .destination-strip {
-    opacity: 1;
-    transform: none;
-  }
-
-  .destination-modal {
-    padding: 4svh 14px;
-  }
-
-  .destination-modal-panel {
-    width: min(100%, 680px);
-    height: 92svh;
-    grid-template-columns: 1fr;
-    grid-template-rows: minmax(300px, 58%) auto;
-    overflow-y: auto;
-  }
-
-  .destination-modal-copy {
-    padding: 24px 20px 20px;
-  }
-
-  .destination-modal-copy h2 {
-    margin: 7px 0 10px;
-    font-size: 2rem;
-  }
-
-  .destination-modal-copy > p:not(.brand-eyebrow) {
-    margin-bottom: 18px;
-    line-height: 1.55;
-  }
-
   .brand-footer {
     grid-template-columns: 1fr;
-  }
-
-  .guide-seasonal-section .brand-footer {
-    padding: 16px;
   }
 }
 
@@ -2711,46 +2338,5 @@ body.modal-open {
 
   .brand-button {
     width: 100%;
-  }
-
-  .destination-strip-copy,
-  .destination-strip-meta {
-    padding: 12px;
-  }
-
-  .destination-strip-name {
-    font-size: 1.3rem;
-  }
-
-  .destination-strip-english {
-    font-size: 0.62rem;
-  }
-
-  .destination-strip-action {
-    display: none;
-  }
-
-  .destination-strip-season {
-    max-width: 110px;
-    text-align: right;
-  }
-
-  .destination-modal-image {
-    padding: 10px;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .destination-strip,
-  .destination-strip-image,
-  .destination-strip-item,
-  .destination-modal,
-  .destination-modal-panel {
-    transition: none;
-  }
-
-  .destination-strip {
-    opacity: 1;
-    transform: none;
   }
 }
