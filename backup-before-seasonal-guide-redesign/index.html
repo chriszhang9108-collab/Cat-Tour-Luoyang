@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>猫游洛阳 Cat Tour Luoyang</title>
   <meta name="description" content="《猫游洛阳》是一个关于洛阳、猫和普通人心事的数字文旅 IP。">
-  <meta name="application-version" content="1.1.9">
-  <link rel="stylesheet" href="css/style.css?v=1.1.9">
+  <meta name="application-version" content="1.1.8">
+  <link rel="stylesheet" href="css/style.css?v=1.1.8">
 </head>
 <body data-page="brand-home">
   <header class="brand-header">
@@ -110,13 +110,13 @@
       <div class="game-card-grid" id="game-list"></div>
     </section>
 
-    <section class="brand-section guide-section last-guide-section guide-seasonal-section" id="guide" data-section="guide" aria-labelledby="seasonal-guide-title">
-      <div class="section-copy guide-seasonal-header">
-        <p class="brand-eyebrow" data-i18n="guideEyebrow">Seasonal Luoyang Guide</p>
-        <h2 id="seasonal-guide-title" data-i18n="guideTitle">橘小洛的当季洛阳导览</h2>
-        <p data-i18n="guideSubtitle">这个夏天，先去有风、有水、有树荫的地方。</p>
+    <section class="brand-section guide-section last-guide-section" id="guide" data-section="guide">
+      <div class="section-copy">
+        <p class="brand-eyebrow" data-i18n="guideEyebrow">Luoyang Emotion Guide</p>
+        <h2 data-i18n="guideTitle">橘小洛的洛阳导览</h2>
+        <p data-i18n="guideSubtitle">这里不只告诉你去哪儿，也告诉你为什么要在某一刻去那里。</p>
       </div>
-      <div class="seasonal-destination-list" id="seasonal-destination-list" role="list"></div>
+      <div class="guide-board" id="home-guide-list"></div>
       <footer class="brand-footer cooperation-card">
         <div>
           <p class="brand-eyebrow" data-i18n="cooperationEyebrow">Cooperation</p>
@@ -134,25 +134,7 @@
     <video id="modal-video" controls playsinline></video>
   </div>
 
-  <div class="destination-modal" id="destination-modal" role="dialog" aria-modal="true" aria-labelledby="destination-modal-title" hidden>
-    <div class="destination-modal-backdrop" data-destination-close></div>
-    <div class="destination-modal-panel" role="document">
-      <button class="destination-modal-close" type="button" data-destination-close aria-label="关闭景点预览">×</button>
-      <div class="destination-modal-stage">
-        <img class="destination-modal-blur" id="destination-modal-blur" alt="" aria-hidden="true">
-        <img class="destination-modal-image" id="destination-modal-image" alt="">
-        <p class="destination-image-fallback" id="destination-image-fallback" hidden></p>
-      </div>
-      <div class="destination-modal-copy">
-        <p class="brand-eyebrow" id="destination-modal-season"></p>
-        <h2 id="destination-modal-title"></h2>
-        <p id="destination-modal-summary"></p>
-        <a class="brand-button primary destination-plan-button" id="destination-plan-button" target="_blank" rel="noopener noreferrer"></a>
-      </div>
-    </div>
-  </div>
-
-  <script src="js/data.js?v=1.1.9"></script>
-  <script src="js/homepage.js?v=1.1.9"></script>
+  <script src="js/data.js?v=1.1.8"></script>
+  <script src="js/homepage.js?v=1.1.8"></script>
 </body>
 </html>
