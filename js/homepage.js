@@ -194,6 +194,10 @@
       var card = document.createElement("a");
       card.className = "home-game-card";
       card.href = item[3];
+      if (/^https?:\/\//.test(item[3])) {
+        card.target = "_blank";
+        card.rel = "noopener noreferrer";
+      }
       card.innerHTML = '<span>0' + (index + 1) + '</span><h3>' + item[0] + '</h3><p>' + item[1] + '</p><b>' + item[2] + "</b>";
       list.appendChild(card);
     });
