@@ -70,7 +70,7 @@ window.CAT_LUOYANG_DATA = {
   games: [
     ["橘小洛找牡丹", "在花海里找到真正的牡丹，解锁一句治愈的话。", "可玩", "games.html"],
     ["解压撸猫猫", "选择橘小洛或小灰，轻点、慢撸、长按，看看它们不同的性格反馈。", "可玩", "https://chriszhang9108-collab.github.io/Cat-Tour-Luoyang-Games/"],
-    ["猫爪打卡洛阳", "点击洛阳地标，盖下橘小洛的猫爪印章。", "开发中", "games.html"],
+    ["神都案卷", "进入洛阳城中的互动故事，查线索、做选择，看见自己的判断方式。", "可玩", "games/shendu-casebook/"],
     ["洛阳情绪地图", "选择今天的心情，看看橘小洛会带你去哪里。", "开发中", "guide.html"]
   ],
   seasonalDestinations: [
