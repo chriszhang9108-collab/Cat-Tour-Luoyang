@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f7f0df">
+  <meta name="description" content="陪橘小洛跨越四季，把一块普通花圃养成洛阳春日盛放的牡丹小园。">
+  <title>橘小洛种牡丹｜猫游洛阳</title>
+  <link rel="preload" as="image" href="assets/garden-stage-01.webp">
+  <link rel="preload" as="image" href="assets/garden-stage-08.webp">
+  <link rel="stylesheet" href="peony-garden.css?v=1.0.0">
+</head>
+<body>
+  <header class="game-topbar">
+    <a class="back-home" href="../../index.html#games" aria-label="返回猫游洛阳官网小游戏区">
+      <img src="../../assets/images/brand/brand-mark.png" alt="">
+      <span><b>猫游洛阳</b><small>返回官网</small></span>
+    </a>
+    <div class="topbar-title" aria-label="游戏名称">
+      <span>PEONY GARDEN</span>
+      <strong>橘小洛种牡丹</strong>
+    </div>
+    <div class="topbar-actions">
+      <div class="month-badge" id="month-badge" aria-live="polite">
+        <span id="year-label">第一年</span>
+        <strong id="month-label">六月</strong>
+      </div>
+      <button class="icon-button" id="settings-button" type="button" aria-label="打开设置" aria-expanded="false">
+        <span aria-hidden="true">☼</span>
+      </button>
+    </div>
+  </header>
+
+  <main class="game-shell">
+    <section class="objective-strip" aria-label="本轮目标">
+      <div class="objective-copy">
+        <span>这一年的约定</span>
+        <strong>照料土壤与根系，等到来年 4—5 月开花</strong>
+      </div>
+      <ol class="season-route" id="season-route" aria-label="牡丹成长路线">
+        <li class="is-current"><i></i><span>准备</span></li>
+        <li><i></i><span>栽种</span></li>
+        <li><i></i><span>越冬</span></li>
+        <li><i></i><span>生长</span></li>
+        <li><i></i><span>盛花</span></li>
+      </ol>
+    </section>
+
+    <div class="play-layout">
+      <section class="garden-card" id="garden-card" aria-label="牡丹花圃主场景">
+        <div class="scene-frame" id="scene-frame">
+          <img class="scene-layer is-active" id="scene-layer-a" src="assets/garden-stage-01.webp" alt="六月里安静而普通的洛阳小花圃">
+          <img class="scene-layer" id="scene-layer-b" src="assets/garden-stage-01.webp" alt="">
+          <div class="season-wash" aria-hidden="true"></div>
+          <div class="sun-dust" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+          <div class="petal-drift" id="petal-drift" aria-hidden="true">
+            <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+          </div>
+          <img class="xiaoluo" id="xiaoluo" src="assets/ju-xiaoluo.webp" alt="橘小洛站在花圃旁陪你种牡丹">
+          <div class="speech-bubble" id="speech-bubble" role="status">先把土养好，花才会安心长大。</div>
+          <div class="stage-plaque">
+            <span id="stage-number">01</span>
+            <div><small>花圃状态</small><strong id="stage-name">一方素土</strong></div>
+          </div>
+        </div>
+      </section>
+
+      <aside class="control-panel" aria-label="养护操作与状态">
+        <section class="status-card panel-card">
+          <div class="panel-heading">
+            <div><span>GARDEN CONDITION</span><h2>花圃状态</h2></div>
+            <b id="readiness-summary">花期尚远</b>
+          </div>
+          <div class="stat-grid" id="stat-grid">
+            <div class="stat-item" data-stat="soil"><span class="stat-seal">土</span><div><p><b>土壤</b><em>待改善</em></p><i><u></u></i></div></div>
+            <div class="stat-item" data-stat="sunlight"><span class="stat-seal">光</span><div><p><b>日照</b><em>充足</em></p><i><u></u></i></div></div>
+            <div class="stat-item" data-stat="drainage"><span class="stat-seal">排</span><div><p><b>排水</b><em>待改善</em></p><i><u></u></i></div></div>
+            <div class="stat-item" data-stat="moisture"><span class="stat-seal">水</span><div><p><b>水分</b><em>适中</em></p><i><u></u></i></div></div>
+            <div class="stat-item" data-stat="nutrients"><span class="stat-seal">养</span><div><p><b>养分</b><em>稍少</em></p><i><u></u></i></div></div>
+            <div class="stat-item" data-stat="rootHealth"><span class="stat-seal">根</span><div><p><b>根系</b><em>安稳</em></p><i><u></u></i></div></div>
+            <div class="stat-item stat-bloom" data-stat="bloom"><span class="stat-seal">花</span><div><p><b>开花准备度</b><em>0%</em></p><i><u></u></i></div></div>
+          </div>
+        </section>
+
+        <section class="actions-card panel-card">
+          <div class="panel-heading action-heading">
+            <div><span id="phase-kicker">JUNE · PREPARE</span><h2 id="month-objective">先整理这方小花圃</h2></div>
+            <b id="action-count">本月可做 1 件事</b>
+          </div>
+          <div class="action-grid" id="action-grid" aria-label="本月可选操作"></div>
+          <button class="next-month-button" id="next-month-button" type="button" disabled>
+            <span id="next-button-label">先完成本月照料</span>
+            <i aria-hidden="true">→</i>
+          </button>
+        </section>
+
+        <section class="tip-card panel-card" aria-live="polite">
+          <span class="tip-seal">牡丹小贴士</span>
+          <p id="tip-text">牡丹喜欢肥沃、疏松又排水好的土，准备花圃比急着下苗更重要。</p>
+        </section>
+      </aside>
+    </div>
+  </main>
+
+  <section class="start-screen" id="start-screen" aria-labelledby="start-title">
+    <div class="start-paper">
+      <div class="start-copy">
+        <p class="start-kicker">猫游洛阳 · 第二个小游戏</p>
+        <h1 id="start-title">橘小洛种牡丹</h1>
+        <p class="start-subtitle">和橘小洛一起，把平凡的小花圃，养成春天盛开的牡丹小园。</p>
+        <div class="goal-statement">
+          <span>最终目标</span>
+          <strong>跨越四季认真照料，让花圃在来年 4—5 月迎来盛放。</strong>
+          <small>你会照料土壤、根系、水分与养分，也要耐心等花期真正到来。</small>
+        </div>
+        <ol class="start-route" aria-label="一年种植路线">
+          <li><b>6—8月</b><span>准备花圃</span></li>
+          <li><b>9—10月</b><span>秋日栽种</span></li>
+          <li><b>11—2月</b><span>越冬蓄力</span></li>
+          <li><b>3月</b><span>萌芽生长</span></li>
+          <li><b>4—5月</b><span>等待盛花</span></li>
+        </ol>
+        <button class="start-button" id="start-button" type="button"><span>开始种植</span><i>从六月出发</i></button>
+      </div>
+      <figure class="goal-preview">
+        <img src="assets/garden-stage-08.webp" alt="最终目标预览：同一片花圃开满粉、白、红色牡丹">
+        <figcaption><span>来年春日预览</span><strong>从一块小花圃，到一整个春天</strong></figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="choice-modal" id="planting-modal" role="dialog" aria-modal="true" aria-labelledby="planting-title" hidden>
+    <div class="modal-backdrop"></div>
+    <div class="choice-paper">
+      <p class="start-kicker">九月 · 关键栽种</p>
+      <h2 id="planting-title">花芽应该埋多深？</h2>
+      <p>牡丹不喜欢被埋得太深。观察芽眼，选一个你觉得合适的深度。</p>
+      <div class="depth-grid">
+        <button type="button" data-depth="shallow"><span>浅</span><strong>芽眼露得多一些</strong><small>通气，但根部不够安稳</small></button>
+        <button type="button" data-depth="right"><span>宜</span><strong>芽眼贴近土面</strong><small>既安稳，也不压住花芽</small></button>
+        <button type="button" data-depth="deep"><span>深</span><strong>埋深一点更稳</strong><small>看似牢靠，可能影响开花</small></button>
+      </div>
+    </div>
+  </section>
+
+  <section class="month-transition" id="month-transition" aria-live="assertive" hidden>
+    <div class="calendar-sheet">
+      <span id="transition-year">第一年</span>
+      <strong id="transition-month">七月</strong>
+      <i></i>
+      <p id="transition-copy">盛夏的光落在刚翻松的土上。</p>
+    </div>
+  </section>
+
+  <section class="ending-screen" id="ending-screen" aria-labelledby="ending-title" hidden>
+    <div class="ending-shade"></div>
+    <div class="ending-card">
+      <p class="start-kicker">这一年的花事</p>
+      <span class="ending-seal" id="ending-seal">春</span>
+      <h2 id="ending-title">牡丹满庭</h2>
+      <p class="ending-line" id="ending-line">这一园牡丹，终于等来了洛阳的春风。</p>
+      <div class="ending-score"><span>开花准备度</span><strong id="ending-score">88</strong><small>/ 100</small></div>
+      <p class="ending-note" id="ending-note">土壤、根系与春季养护都很安稳，花开得丰盛又从容。</p>
+      <div class="ending-actions">
+        <button class="start-button" id="next-year-button" type="button"><span>再养一年</span><i>保留花圃基础</i></button>
+        <button class="secondary-button" id="restart-button" type="button">重新开始</button>
+      </div>
+    </div>
+  </section>
+
+  <aside class="settings-panel" id="settings-panel" aria-label="游戏设置" hidden>
+    <div class="settings-heading"><strong>游戏设置</strong><button id="settings-close" type="button" aria-label="关闭设置">×</button></div>
+    <label><span><b>舒缓动画</b><small>关闭后减少翻页与漂浮效果</small></span><input id="motion-toggle" type="checkbox" checked></label>
+    <button class="settings-reset" id="settings-reset" type="button">重新开始这一年</button>
+  </aside>
+
+  <script src="peony-garden.js?v=1.0.0"></script>
+</body>
+</html>
